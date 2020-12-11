@@ -18,10 +18,11 @@
         #}
         <div class="items">
             {% for plant in plants %}
+                {% set plant_id_url = "/plant/" + plant['_id']|string %}
                 <div class="card">
-                    <a href= {{ plant['_id'] }}></a><img src= {{ plant['photo_url'] }} alt="">
+                    <a href= {{ plant_id_url }}></a><img src= {{ plant['photo_url'] }} alt="">
                     <div class="card-content">
-                        <a href={{ plant['_id'] }}>{{ plant['name'] }}</a>
+                        <a href={{ plant_id_url }}>{{ plant['name'] }}</a>
                     </div>
                 </div>
             {% endfor %}
