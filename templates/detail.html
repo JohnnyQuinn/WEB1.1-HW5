@@ -68,8 +68,9 @@
                 <li>5/18/2020: Harvested 2 tomatoes</li>
             </ul> -->
         </section>
-
-        <form action="/delete/123456" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+        
+        {% set delete_url = "/delete/" + plant['_id']|string %}
+        <form action={{ delete_url }} method='POST' id="delete-form" onsubmit="return confirm_delete()">
             <input type="submit" class="nav" onclick="delete_modal()" value="Delete Plant">
         </form>
 </main>
